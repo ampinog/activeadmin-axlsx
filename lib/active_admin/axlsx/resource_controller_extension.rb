@@ -3,11 +3,11 @@ module ActiveAdmin
     module ResourceControllerExtension
       def self.included(base)
         #base.send :alias_method_chain, :per_page, :xlsx
-        base.send :alias_method, :per_page_without_xlsx, :xlsx
         base.send :alias_method, :xlsx, :per_page_with_xlsx
+        base.send :alias_method, :per_page_without_xlsx, :xlsx
         #base.send :alias_method_chain, :index, :xlsx
-        base.send :alias_method, :index_without_xlsx, :xlsx
         base.send :alias_method, :xlsx, :index_with_xlsx
+        base.send :alias_method, :index_without_xlsx, :xlsx
         base.send :respond_to, :xlsx
       end
 
